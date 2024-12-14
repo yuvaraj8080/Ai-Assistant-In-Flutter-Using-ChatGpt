@@ -80,7 +80,7 @@ class _RealtimeAssistantScreenState extends State<RealtimeAssistantScreen> {
               },
                 child: speechToTextInstance.isListening
                     ? Lottie.asset('assets/lottie/voice_Assistant.json')
-                    : Lottie.asset('assets/lottie/AiVoiceAssistant.json')
+                    : Lottie.asset('assets/lottie/voice_Assistant.json')
             ),
 
             SizedBox(height:10),
@@ -102,9 +102,7 @@ class _RealtimeAssistantScreenState extends State<RealtimeAssistantScreen> {
                 const SizedBox(width:5),
 
                 InkWell(
-                  onTap:(){
-                    stopListeningNow();
-                  },
+                  onTap:(){},
                   child:AnimatedContainer(
                     padding:EdgeInsets.all(10),
                       decoration:BoxDecoration(shape:BoxShape.rectangle),

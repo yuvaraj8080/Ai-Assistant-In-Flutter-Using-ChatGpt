@@ -50,6 +50,7 @@ dependencies:
   
   # Google Gemini Ai Integration
   google_generative_ai: ^0.4.3
+  permission_handler:
 
   # For Google Language Translate
   translator_plus: ^1.0.1
