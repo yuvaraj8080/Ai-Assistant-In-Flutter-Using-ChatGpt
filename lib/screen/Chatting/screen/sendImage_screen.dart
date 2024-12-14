@@ -21,6 +21,7 @@ class SendImageScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             // Image
+
             Container(
               height: 400,
               color: Colors.grey[200],
@@ -36,6 +37,8 @@ class SendImageScreen extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
+
+
             // Pick and Remove image buttons
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -73,7 +76,7 @@ class SendImageScreen extends StatelessWidget {
                 maxLines: null,
               ),
             ),
-            const SizedBox(height: 100),
+            const SizedBox(height:20),
             // Send Message Button
             Padding(
               padding: const EdgeInsets.all(8.0),

@@ -6,8 +6,6 @@ import 'package:get/get.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:uuid/uuid.dart';
-
-import '../model/message.dart';
 import 'Storage_repository.dart';
 
 
