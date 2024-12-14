@@ -40,6 +40,10 @@ class _RealtimeAssistantScreenState extends State<RealtimeAssistantScreen> {
     });
   }
 
+  void stopListeningNow()async{
+    await speechToTextInstance.stop();
+  }
+
  void onSpeechToTextResult(SpeechRecognitionResult recognitionResult){
     recordedAudioString = recognitionResult.recognizedWords;
     print("*******************************************");
@@ -69,8 +73,14 @@ class _RealtimeAssistantScreenState extends State<RealtimeAssistantScreen> {
 
             ///// AI VOICE ASSINSTANT IMAGE HARE
             InkWell(
-              onTap:(){},
-                child: Lottie.asset('assets/lottie/AiVoiceAssistant.json')
+              onTap:(){
+                speechToTextInstance.isListening
+                    ? stopListeningNow()
+                    : startListeningNow();
+              },
+                child: speechToTextInstance.isListening
+                    ? Lottie.asset('assets/lottie/voice_Assistant.json')
+                    : Lottie.asset('assets/lottie/AiVoiceAssistant.json')
             ),
 
             SizedBox(height:10),
@@ -92,7 +102,9 @@ class _RealtimeAssistantScreenState extends State<RealtimeAssistantScreen> {
                 const SizedBox(width:5),
 
                 InkWell(
-                  onTap:(){},
+                  onTap:(){
+                    stopListeningNow();
+                  },
                   child:AnimatedContainer(
                     padding:EdgeInsets.all(10),
                       decoration:BoxDecoration(shape:BoxShape.rectangle),
