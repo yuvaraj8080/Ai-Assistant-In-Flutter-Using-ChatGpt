@@ -31,9 +31,6 @@ class _HomeScreenState extends State<HomeScreen> {
     //initializing device size
     mq = MediaQuery.sizeOf(context);
 
-    //sample api call
-    // APIs.getAnswer('hii');
-
     return Scaffold(
       //app bar
       appBar: AppBar(
