@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:developer';
-
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:http/http.dart';
 import 'package:translator_plus/translator_plus.dart';
@@ -11,11 +10,11 @@ class APIs {
   //get answer from google gemini ai
   static Future<String> getAnswer(String question) async {
     try {
-      log('api key: $apiKey');
+      log('api key: $geminiKey');
 
       final model = GenerativeModel(
         model: 'gemini-1.5-flash-latest',
-        apiKey: apiKey,
+        apiKey: geminiKey,
       );
 
       final content = [Content.text(question)];

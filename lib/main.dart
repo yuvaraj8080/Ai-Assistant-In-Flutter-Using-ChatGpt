@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-
-import 'apis/app_write.dart';
 import 'helper/ad_helper.dart';
 import 'helper/global.dart';
 import 'helper/pref.dart';
@@ -14,8 +12,7 @@ Future<void> main() async {
   // init hive
   await Pref.initialize();
 
-  // for app write initialization
-  AppWrite.init();
+
 
   // for initializing facebook ads sdk
   AdHelper.init();
