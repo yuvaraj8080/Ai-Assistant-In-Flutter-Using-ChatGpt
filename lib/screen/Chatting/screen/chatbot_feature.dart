@@ -1,10 +1,12 @@
-import '../../main.dart';
+import 'package:ai_assistant/screen/Chatting/screen/sendImage_screen.dart';
+
+import '../../../main.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../controller/chat_controller.dart';
-import '../../helper/global.dart';
-import '../../widget/message_card.dart';
+import '../Controller/chat_controller.dart';
+import '../../../helper/global.dart';
+import '../../../widget/message_card.dart';
 
 class ChatBotFeature extends StatefulWidget {
   const ChatBotFeature({super.key});
@@ -28,7 +30,8 @@ class _ChatBotFeatureState extends State<ChatBotFeature> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
-        child: Row(children: [
+        child: Row(
+            children: [
           //text input field
           Expanded(
               child: TextFormField(
@@ -45,17 +48,27 @@ class _ChatBotFeatureState extends State<ChatBotFeature> {
                     borderRadius: BorderRadius.all(Radius.circular(50)))),
           )),
 
+
+              // Image Button
+              IconButton(
+                onPressed:(){
+                  Get.to(()=> SendImageScreen());
+                },
+                icon: const Icon(
+                  Icons.image_outlined,size:30,
+                ),
+              ),
           //for adding some space
           const SizedBox(width: 8),
 
           //send button
           CircleAvatar(
-            radius: 24,
+            radius: 20,
             backgroundColor: Theme.of(context).buttonColor,
             child: IconButton(
               onPressed: _c.askQuestion,
               icon: const Icon(Icons.rocket_launch_rounded,
-                  color: Colors.white, size: 28),
+                  color: Colors.white, size: 20),
             ),
           )
         ]),

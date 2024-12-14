@@ -20,9 +20,11 @@ dependencies:
   # For using Lottie Animations
   lottie: ^3.1.2
 
-  # For Hive Database
-  # hive: ^4.0.0-dev.2
-  # isar_flutter_libs: ^4.0.0-dev.13
+  # FIREBASE CONNECTION
+  firebase_core: ^3.8.1
+  cloud_firestore: ^5.5.1
+  firebase_storage: ^12.3.7
+  firebase_auth: ^5.3.4
 
   # Using this version due to less apk size
   hive: ^2.2.3
@@ -44,6 +46,7 @@ dependencies:
   # For AI Image Generation
   dart_openai: ^5.1.0
   cached_network_image: ^3.3.1
+  image_picker:
   
   # Google Gemini Ai Integration
   google_generative_ai: ^0.4.3

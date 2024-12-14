@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "450975758480",
+    "project_id": "vehicledispatchapp",
+    "storage_bucket": "vehicledispatchapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450975758480:android:88e8652639e97171488015",
+        "android_client_info": {
+          "package_name": "com.VoiceAssistant"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeTBozsvB3j23a1IEAeTjtFo1BwVGP-bA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450975758480:android:9b919a3fe65608ec488015",
+        "android_client_info": {
+          "package_name": "com.example.vechile_dispatch_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeTBozsvB3j23a1IEAeTjtFo1BwVGP-bA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

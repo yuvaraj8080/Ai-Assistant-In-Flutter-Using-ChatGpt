@@ -1,5 +1,8 @@
 plugins {
     id "com.android.application"
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services'
+    // END: FlutterFire Configuration
     id "kotlin-android"
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id "dev.flutter.flutter-gradle-plugin"
@@ -24,7 +27,7 @@ if (flutterVersionName == null) {
 }
 
 android {
-    namespace = "com.harshRajpurohit.ai_assistant"
+    namespace = "com.VoiceAssistant"
     compileSdk = 34
     ndkVersion "27.0.12077973"
 
@@ -38,7 +41,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.harshRajpurohit.ai_assistant"
+        applicationId = "com.VoiceAssistant"
         minSdk = 23
         targetSdk = flutter.targetSdkVersion
         versionCode = flutterVersionCode.toInteger()

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../apis/apis.dart';
-import '../helper/my_dialog.dart';
-import '../model/message.dart';
+import '../../../apis/apis.dart';
+import '../../../helper/my_dialog.dart';
+import '../../../model/message.dart';
 
 class ChatController extends GetxController {
 

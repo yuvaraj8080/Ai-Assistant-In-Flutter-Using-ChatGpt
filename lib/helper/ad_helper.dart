@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:easy_audience_network/easy_audience_network.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 import 'my_dialog.dart';
 
@@ -75,5 +76,26 @@ class AdHelper {
         ),
       ),
     );
+  }
+}
+
+extension GetImageMimeType on XFile {
+  String getImageFileType() {
+    final extension = path.split('.').last;
+    switch (extension) {
+      case 'jpg':
+        return 'image/jpeg';
+      case 'png':
+        return 'image/png';
+      case 'webp':
+        return 'image/webp';
+      case 'heic':
+        return 'image/heic';
+      case 'heif':
+        return 'image/heif';
+
+      default:
+        return 'application/octet-stream'; // Unknown type
+    }
   }
 }

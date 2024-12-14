@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../screen/feature/chatbot_feature.dart';
+import '../screen/Chatting/screen/chatbot_feature.dart';
 import '../screen/feature/image_feature.dart';
 import '../screen/feature/translator_feature.dart';
 
