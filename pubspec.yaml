@@ -1,5 +1,5 @@
 name: ai_assistant
-description: An AI Assistant (ChatBot, Image Generator & Language Translator) App Based on ChatGPT developed by Harsh H. Rajpurohit 
+description: An AI Assistant (ChatBot, Image Generator & Language Translator) App Based on ChatGPT developed by Yuvaraj Dekhane
 
 publish_to: 'none' 
 
@@ -15,7 +15,7 @@ dependencies:
     sdk: flutter
 
   # App Write Database (For dynamically getting API Key)  
-  appwrite: ^12.0.4
+  appwrite: ^13.0.0
   # appwrite: 
   #   path: ./appwrite
 
@@ -60,7 +60,7 @@ dependencies:
   gallery_saver_updated: ^3.0.0
 
   # For Sharing Image
-  share_plus: ^9.0.0
+  share_plus: ^10.1.3
 
   # Facebook Ads
   easy_audience_network: ^0.0.6
@@ -70,7 +70,7 @@ dev_dependencies:
     sdk: flutter
 
   # Encourages Good Practices
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
 
   # For Changing App Icon
   # icons_launcher: ^2.1.7

@@ -22,7 +22,6 @@ class _TranslatorFeatureState extends State<TranslatorFeature> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //app bar
       appBar: AppBar(
         title: const Text('Multi Language Translator'),
       ),

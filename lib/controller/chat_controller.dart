@@ -6,6 +6,7 @@ import '../helper/my_dialog.dart';
 import '../model/message.dart';
 
 class ChatController extends GetxController {
+
   final textC = TextEditingController();
 
   final scrollC = ScrollController();
