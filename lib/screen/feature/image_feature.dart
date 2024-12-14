@@ -38,18 +38,18 @@ class _ImageFeatureState extends State<ImageFeature> {
         ],
       ),
 
-      //download btn
-      floatingActionButton: Obx(() => _c.status.value == Status.complete
-          ? Padding(
-              padding: const EdgeInsets.only(right: 6, bottom: 6),
-              child: FloatingActionButton(
-                onPressed: _c.downloadImage,
-                shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(15))),
-                child: const Icon(Icons.save_alt_rounded, size: 26),
-              ),
-            )
-          : const SizedBox()),
+      // //download btn
+      // floatingActionButton: Obx(() => _c.status.value == Status.complete
+      //     ? Padding(
+      //         padding: const EdgeInsets.only(right: 6, bottom: 6),
+      //         child: FloatingActionButton(
+      //           onPressed: _c.downloadImage,
+      //           shape: const RoundedRectangleBorder(
+      //               borderRadius: BorderRadius.all(Radius.circular(15))),
+      //           child: const Icon(Icons.save_alt_rounded, size: 26),
+      //         ),
+      //       )
+      //     : const SizedBox()),
 
       //body
       body: ListView(

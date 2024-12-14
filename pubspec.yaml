@@ -57,7 +57,7 @@ dependencies:
   translator_plus: ^1.0.1
 
   # For Saving Image to Gallery
-  gallery_saver_updated: ^3.0.0
+#  gallery_saver_updated: ^3.0.0
 
   # For Sharing Image
   share_plus: ^10.1.3
@@ -68,6 +68,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
 
   # Encourages Good Practices
   flutter_lints: ^5.0.0
