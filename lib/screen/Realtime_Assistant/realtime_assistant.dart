@@ -1,124 +1,77 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:speech_to_text/speech_recognition_result.dart';
-import 'package:speech_to_text/speech_to_text.dart';
 
-class RealtimeAssistantScreen extends StatefulWidget {
-  const RealtimeAssistantScreen({super.key});
+import 'Home_Controller.dart';
 
-  @override
-  State<RealtimeAssistantScreen> createState() => _RealtimeAssistantScreenState();
-}
+class RealtimeAssistantScreen extends StatelessWidget {
+  final HomeController controller = HomeController();
 
-class _RealtimeAssistantScreenState extends State<RealtimeAssistantScreen> {
-
-  TextEditingController inputString = TextEditingController();
-  final SpeechToText speechToTextInstance = SpeechToText();
-  String recordedAudioString = "";
-
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    initializeSpeechToText();
+  RealtimeAssistantScreen({super.key}) {
+    controller.initSpeechToText();
+    controller.initTextToSpeech();
   }
-
-  //// SPEECH TO TEXT CONVERT METHOD
-  void initializeSpeechToText()async{
-    await speechToTextInstance.initialize();
-    setState(() {
-
-    });
-  }
-
-  startListeningNow()async{
-    FocusScope.of(context).unfocus();
-    await speechToTextInstance.listen(onResult:onSpeechToTextResult);
-    setState(() {
-
-    });
-  }
-
-  void stopListeningNow()async{
-    await speechToTextInstance.stop();
-  }
-
- void onSpeechToTextResult(SpeechRecognitionResult recognitionResult){
-    recordedAudioString = recognitionResult.recognizedWords;
-    print("*******************************************");
-
-    print(recordedAudioString);
- }
-
-
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      appBar:AppBar(title:Text("Voice Assistant")),
-
-      floatingActionButton:FloatingActionButton(
-        backgroundColor:Colors.white,
-        onPressed:(){
-
-        },
-        child:Icon(Icons.record_voice_over_outlined),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Vision AI'),
+        leading: const Icon(Icons.menu),
+        centerTitle: true,
       ),
-
-      body:SingleChildScrollView(
-        child:Padding(
-          padding:EdgeInsets.all(10),
-          child:Column(children: [
-
-            ///// AI VOICE ASSINSTANT IMAGE HARE
-            InkWell(
-              onTap:(){
-                speechToTextInstance.isListening
-                    ? stopListeningNow()
-                    : startListeningNow();
-              },
-                child: speechToTextInstance.isListening
-                    ? Lottie.asset('assets/lottie/voice_Assistant.json')
-                    : Lottie.asset('assets/lottie/voice_Assistant.json')
-            ),
-
-            SizedBox(height:10),
-
-            //// TEXT FILED WITH  BUTTON
-            Row(
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Colors.blue, // Start color
+              Colors.purple, // End color
+            ],
+            begin: Alignment.topLeft, // Start point of the gradient
+            end: Alignment.bottomRight, // End point of the gradient
+          ),
+        ),
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
               children: [
-              //// TEXT FIELD HARE
-              Expanded(
-                child:TextFormField(
-                  // controller:,
-                  decoration:InputDecoration(
-                     border:OutlineInputBorder(),
-                    labelText:"How can i help today",
-                  )
-                )
-              ),
-
-                const SizedBox(width:5),
-
-                InkWell(
-                  onTap:(){},
-                  child:AnimatedContainer(
-                    padding:EdgeInsets.all(10),
-                      decoration:BoxDecoration(shape:BoxShape.rectangle),
-                    duration:const Duration(microseconds:1000),
-                    curve:Curves.bounceInOut,
-                    child:Icon(Icons.send),
-                  )
-                )
-
-            ],)
+                SizedBox(height: 80),
+                // HARE IS THE HELP TEXT CONTAINER
+                Container(
+                  child: Center(
+                    child: Column(
+                      children: [
+                        Text("Hello!", style: TextStyle(color: Colors.white, fontSize: 24),),
+                        Text("What can I do for you?", style: TextStyle(color: Colors.white, fontSize: 18),),
+                      ],
+                    ),
+                  ),
+                ),
 
 
-
-            ///
-          ],),
-        )
+              ],
+            ),
+          ),
+        ),
+      ),
+      floatingActionButton: ZoomIn(
+        child: FloatingActionButton(
+          backgroundColor: Colors.blue,
+          onPressed: () async {
+            if (controller.isListening) {
+              await controller.stopListening();
+              final speech = await controller.getAnswerFromGemini(controller.lastWords.value);
+              controller.generatedContent.value = speech;
+              await controller.systemSpeak(speech);
+            } else {
+              await controller.startListening(controller.onSpeechResult);
+            }
+          },
+          child: Icon(
+            controller.isListening ? Icons.stop : Icons.mic,
+          ),
+        ),
       ),
     );
   }

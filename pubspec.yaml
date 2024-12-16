@@ -47,6 +47,7 @@ dependencies:
   dart_openai: ^5.1.0
   cached_network_image: ^3.3.1
   image_picker:
+  animate_do:
   
   # Google Gemini Ai Integration
   google_generative_ai: ^0.4.3
@@ -58,6 +59,7 @@ dependencies:
   # For Saving Image to Gallery
 #  gallery_saver_updated: ^3.0.0
   speech_to_text:
+  flutter_tts:
 
   # For Sharing Image
   share_plus: ^10.1.3

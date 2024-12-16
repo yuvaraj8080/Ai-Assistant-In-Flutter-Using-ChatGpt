@@ -48,6 +48,6 @@ extension MyHomeType on HomeType {
         HomeType.aiChatBot => () => Get.to(() => const ChatBotFeature()),
         HomeType.aiImage => () => Get.to(() => const ImageFeature()),
         HomeType.aiTranslator => () => Get.to(() => const TranslatorFeature()),
-        HomeType.realtimeVoice => () => Get.to(() => const RealtimeAssistantScreen()),
+        HomeType.realtimeVoice => () => Get.to(() => RealtimeAssistantScreen()),
       };
 }
