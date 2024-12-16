@@ -9,8 +9,7 @@ import '../../helper/global.dart';
 
 
 
-class HomeController extends GetxController{
-
+class HomeController extends GetxController {
   static HomeController get instance => Get.find();
 
   final SpeechToText speechToText = SpeechToText();
@@ -18,7 +17,6 @@ class HomeController extends GetxController{
   bool isListening = false;
   RxString lastWords = ''.obs;
   RxString generatedContent = ''.obs;
-
 
   Future<void> initSpeechToText() async {
     await speechToText.initialize();
@@ -31,7 +29,15 @@ class HomeController extends GetxController{
   Future<void> startListening(Function(SpeechRecognitionResult) onSpeechResult) async {
     if (await speechToText.hasPermission) {
       isListening = true;
-      await speechToText.listen(onResult: onSpeechResult);
+      await speechToText.listen(onResult: (SpeechRecognitionResult result) async {
+        onSpeechResult(result);
+        if (result.finalResult) {
+          await stopListening();
+          String response = await getAnswerFromGemini(lastWords.value);
+          generatedContent.value = response;
+          await systemSpeak();
+        }
+      });
     }
   }
 
@@ -42,8 +48,14 @@ class HomeController extends GetxController{
     }
   }
 
-  Future<void> systemSpeak(String content) async {
-    await flutterTts.speak(content);
+  Future<void> systemSpeak() async {
+    await flutterTts.speak(generatedContent.value);
+  }
+
+
+  Future<void> stopSpeaking() async {
+    await flutterTts.stop();
+    generatedContent.value = "";
   }
 
   Future<String> getAnswerFromGemini(String question) async {
@@ -73,3 +85,4 @@ class HomeController extends GetxController{
     lastWords.value = result.recognizedWords;
   }
 }
+

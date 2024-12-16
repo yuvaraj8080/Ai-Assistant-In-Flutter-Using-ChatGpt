@@ -1,5 +1,6 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
+
 import 'Home_Controller.dart';
 
 
@@ -11,17 +12,19 @@ class RealtimeAssistantScreen extends StatelessWidget {
     controller.initTextToSpeech();
   }
 
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Vision AI'),
+        backgroundColor: Colors.blueAccent,
+        title: const Text(
+          'Vision AI',
+          style: TextStyle(fontSize: 18, color: Colors.white),
+        ),
         leading: const Icon(Icons.menu),
-        centerTitle: true,
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
               Colors.blue, // Start color
@@ -36,42 +39,51 @@ class RealtimeAssistantScreen extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                SizedBox(height: 80),
-                // HARE IS THE HELP TEXT CONTAINER
+                // Help Text Container
                 Container(
                   child: Center(
                     child: Column(
-                      children: [
-                        Text("Hello!", style: TextStyle(color: Colors.white, fontSize: 24),),
-                        Text("What can I do for you?", style: TextStyle(color: Colors.white, fontSize: 18),),
+                      children: const [
+                        Text(
+                          "Hello!",
+                          style: TextStyle(color: Colors.white, fontSize: 24),
+                        ),
+                        Text(
+                          "What can I do for you?",
+                          style: TextStyle(color: Colors.white, fontSize: 18),
+                        ),
                       ],
                     ),
                   ),
                 ),
-
-
+                const SizedBox(height: 50),
+                // Lottie Animation
+                Container(
+                  child: Lottie.asset("assets/lottie/FlowAnimtion3.json", width: 280),
+                ),
+                const SizedBox(height: 100),
+                // Gemini Voice Lottie Animation
+                InkWell(
+                  onTap: () async {
+                    if (!controller.isListening) {
+                      await controller.startListening(controller.onSpeechResult);
+                    }
+                  },
+                  child: Container(
+                    child: Lottie.asset("assets/lottie/GeminiVoice.json", width: 200),
+                  ),
+                ),
+                const SizedBox(height: 50),
               ],
             ),
           ),
         ),
       ),
-      floatingActionButton: ZoomIn(
-        child: FloatingActionButton(
-          backgroundColor: Colors.blue,
-          onPressed: () async {
-            if (controller.isListening) {
-              await controller.stopListening();
-              final speech = await controller.getAnswerFromGemini(controller.lastWords.value);
-              controller.generatedContent.value = speech;
-              await controller.systemSpeak(speech);
-            } else {
-              await controller.startListening(controller.onSpeechResult);
-            }
-          },
-          child: Icon(
-            controller.isListening ? Icons.stop : Icons.mic,
-          ),
-        ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.record_voice_over_rounded, size: 30),
+        onPressed: () async {
+          await controller.stopSpeaking();
+        },
       ),
     );
   }
