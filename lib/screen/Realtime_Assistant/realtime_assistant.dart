@@ -1,8 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
-
 import 'Home_Controller.dart';
+
 
 class RealtimeAssistantScreen extends StatelessWidget {
   final HomeController controller = HomeController();
