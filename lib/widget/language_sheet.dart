@@ -1,10 +1,8 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../controller/translate_controller.dart';
 import '../helper/global.dart';
+import '../screen/controller/translate_controller.dart';
 
 class LanguageSheet extends StatefulWidget {
   final TranslateController c;

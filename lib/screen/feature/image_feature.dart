@@ -2,11 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-
-import '../../controller/image_controller.dart';
 import '../../helper/global.dart';
 import '../../widget/custom_btn.dart';
 import '../../widget/custom_loading.dart';
+import '../controller/image_controller.dart';
 
 class ImageFeature extends StatefulWidget {
   const ImageFeature({super.key});
