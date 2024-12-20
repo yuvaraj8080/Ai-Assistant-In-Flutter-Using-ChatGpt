@@ -5,7 +5,7 @@ import '../../helper/global.dart';
 import '../../widget/custom_btn.dart';
 import '../../widget/custom_loading.dart';
 import '../../widget/language_sheet.dart';
-import '../controller/image_controller.dart';
+import 'Ai_Image_Creater/Controller/image_controller.dart';
 import '../controller/translate_controller.dart';
 
 class TranslatorFeature extends StatefulWidget {

@@ -5,7 +5,7 @@ import 'package:lottie/lottie.dart';
 import '../../../helper/global.dart';
 import '../../../widget/custom_btn.dart';
 import '../../../widget/custom_loading.dart';
-import '../../controller/image_controller.dart';
+import 'Controller/image_controller.dart';
 
 class ImageFeature extends StatefulWidget {
   const ImageFeature({super.key});

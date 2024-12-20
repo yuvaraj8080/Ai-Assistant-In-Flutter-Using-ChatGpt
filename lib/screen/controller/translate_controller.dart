@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../apis/apis.dart';
 import '../../helper/my_dialog.dart';
-import 'image_controller.dart';
+import '../feature/Ai_Image_Creater/Controller/image_controller.dart';
 
 
 

@@ -46,6 +46,7 @@ dependencies:
   # For AI Image Generation
   dart_openai: ^5.1.0
   cached_network_image: ^3.3.1
+  url_launcher:
   image_picker:
   animate_do:
   

@@ -7,9 +7,9 @@ import 'package:get/get.dart';
 import 'package:http/http.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
-import '../../apis/apis.dart';
-import '../../helper/global.dart';
-import '../../helper/my_dialog.dart';
+import '../../../../apis/apis.dart';
+import '../../../../helper/global.dart';
+import '../../../../helper/my_dialog.dart';
 
 
 enum Status { none, loading, complete }
