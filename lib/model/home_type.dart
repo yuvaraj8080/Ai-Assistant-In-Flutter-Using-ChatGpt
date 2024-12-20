@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../screen/feature/Chatting/screen/chatbot_feature.dart';
 import '../screen/feature/Realtime_Assistant/realtime_assistant.dart';
-import '../screen/feature/Ai_Image_Creater/image_feature.dart';
 import '../screen/feature/translator_feature.dart';
+import '../screen/loadWebView.dart';
 
 
 
@@ -47,7 +47,7 @@ extension MyHomeType on HomeType {
   //for navigation
   VoidCallback get onTap => switch (this) {
         HomeType.aiChatBot => () => Get.to(() => const ChatBotFeature()),
-        HomeType.aiImage => () => Get.to(() => const ImageFeature()),
+        HomeType.aiImage => () => Get.to(() => const LoadWebViewScreen()),
         HomeType.aiTranslator => () => Get.to(() => const TranslatorFeature()),
         HomeType.realtimeVoice => () => Get.to(() => RealtimeAssistantScreen()),
       };
