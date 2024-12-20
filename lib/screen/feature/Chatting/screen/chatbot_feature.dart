@@ -1,12 +1,12 @@
-import 'package:ai_assistant/screen/Chatting/screen/sendImage_screen.dart';
-
-import '../../../main.dart';
+import 'package:ai_assistant/main.dart';
+import 'package:ai_assistant/screen/feature/Chatting/screen/sendImage_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import '../../../../helper/global.dart';
+import '../../../../widget/message_card.dart';
 import '../Controller/chat_controller.dart';
-import '../../../helper/global.dart';
-import '../../../widget/message_card.dart';
+
+
 
 class ChatBotFeature extends StatefulWidget {
   const ChatBotFeature({super.key});

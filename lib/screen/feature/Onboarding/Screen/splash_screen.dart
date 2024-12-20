@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../helper/global.dart';
-import '../helper/pref.dart';
-import '../widget/custom_loading.dart';
-import 'home_screen.dart';
+import '../../../../helper/global.dart';
+import '../../../../helper/pref.dart';
+import '../../../../widget/custom_loading.dart';
+import '../../../home_screen.dart';
 import 'onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {

@@ -1,12 +1,12 @@
-import '../main.dart';
+import '../../../../main.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:lottie/lottie.dart';
 
-import '../helper/global.dart';
-import '../model/onboard.dart';
-import '../widget/custom_btn.dart';
-import 'home_screen.dart';
+import '../../../../helper/global.dart';
+import '../Model/onboard.dart';
+import '../../../../widget/custom_btn.dart';
+import '../../../home_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});

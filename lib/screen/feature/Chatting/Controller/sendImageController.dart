@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:share_plus/share_plus.dart';
+import '../../../../helper/global.dart';
 
-import '../../../helper/global.dart';
+
 
 class SendImageController extends GetxController {
   static SendImageController get instance => Get.find();

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../screen/Chatting/screen/chatbot_feature.dart';
-import '../screen/Realtime_Assistant/realtime_assistant.dart';
-import '../screen/feature/image_feature.dart';
+import '../screen/feature/Chatting/screen/chatbot_feature.dart';
+import '../screen/feature/Realtime_Assistant/realtime_assistant.dart';
+import '../screen/feature/Ai_Image_Creater/image_feature.dart';
 import '../screen/feature/translator_feature.dart';
+
+
 
 enum HomeType { aiChatBot, aiImage, aiTranslator, realtimeVoice }
 

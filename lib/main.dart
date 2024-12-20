@@ -6,7 +6,7 @@ import 'firebase_options.dart';
 import 'helper/ad_helper.dart';
 import 'helper/global.dart';
 import 'helper/pref.dart';
-import 'screen/splash_screen.dart';
+import 'screen/feature/Onboarding/Screen/splash_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
