@@ -11,3 +11,4 @@ class UrlController extends GetxController {
     }
   }
 }
+
