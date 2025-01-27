@@ -21,7 +21,7 @@ class ChatController extends GetxController {
       list.add(Message(msg: '', msgType: MessageType.bot));
       _scrollDown();
 
-      final res = await APIs.getAnswer(textC.text);
+      final res = await ApiService.getAnswer(textC.text);
 
       //ai bot
       list.removeLast();

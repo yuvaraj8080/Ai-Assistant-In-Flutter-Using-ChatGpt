@@ -5,4 +5,4 @@ class Message {
   Message({required this.msg, required this.msgType});
 }
 
-enum MessageType { user, bot }
+enum MessageType {user,bot}
