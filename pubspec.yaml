@@ -61,6 +61,7 @@ dependencies:
 #  gallery_saver_updated: ^3.0.0
   speech_to_text:
   flutter_tts:
+  url_launcher:
 
   # For Sharing Image
   share_plus: ^10.1.3

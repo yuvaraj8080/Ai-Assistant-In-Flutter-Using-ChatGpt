@@ -1,10 +1,11 @@
+import 'package:ai_assistant/screen/feature/OnlineCourse/cpourse_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import '../helper/global.dart';
 import '../helper/pref.dart';
-import '../model/home_type.dart';
-import '../widget/home_card.dart';
+import 'feature/Chatting/screen/chatbot_feature.dart';
+import 'feature/OnlineCourse/Url_Launcher_Controller.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -52,15 +53,51 @@ class _HomeScreenState extends State<HomeScreen> {
                   size: 26)))
         ],
       ),
+      body:Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children:[
+            ElevatedButton(
+              onPressed: (){
+                    Get.to(() => const ChatBotFeature());
+                    },
+              child: Container(
+                width:double.infinity,
+                height:50,
+                color:Colors.green,
+                child: Center(child:Text("Chatting Screen")),
+              ),
+            ),
+            SizedBox(height:50),
 
-      //ad
+            ElevatedButton(
+              onPressed: (){
+                Get.to(() => CourseListView());
+              },
+              child: Container(
+                width:double.infinity,
+                height:50,
+                color:Colors.green,
+                child: Center(child:Text("Online Course ")),
+              ),
+            ),
 
-      //body
-      body: ListView(
-        padding: EdgeInsets.symmetric(
-            horizontal: mq.width * .04, vertical: mq.height * .015),
-        children: HomeType.values.map((e) => HomeCard(homeType: e)).toList(),
-      ),
+            SizedBox(height:50),
+
+            ElevatedButton(
+              onPressed: (){
+                UrlController.instance.launchLink(Uri.parse("https://modal-pi-two.vercel.app/"));
+              },
+              child: Container(
+                width:double.infinity,
+                height:50,
+                color:Colors.green,
+                child: Center(child:Text("Ai Launcher")),
+              ),
+            )
+          ],
+        ),
+      )
     );
   }
 }
