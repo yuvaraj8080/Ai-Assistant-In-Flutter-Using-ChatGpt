@@ -17,8 +17,8 @@ class _LoadWebViewScreenState extends State<LoadWebViewScreen> {
     super.initState();
     requestMicrophonePermission(); // Request microphone permission
     controller = WebViewController()
-      ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..loadRequest(Uri.parse("https://aistudio.google.com/app/live"));
+      ..setJavaScriptMode(JavaScriptMode.unrestricted) // Enable JavaScript
+      ..loadRequest(Uri.parse("https://modal-pi-two.vercel.app/"));
   }
 
   Future<void> requestMicrophonePermission() async {

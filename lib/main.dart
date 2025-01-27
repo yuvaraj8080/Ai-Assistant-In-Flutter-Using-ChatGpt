@@ -52,7 +52,6 @@ class MyApp extends StatelessWidget {
                 TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
           )),
 
-      //light
       theme: ThemeData(
           useMaterial3: false,
           appBarTheme: const AppBarTheme(
