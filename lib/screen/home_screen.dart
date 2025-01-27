@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-
-import '../helper/ad_helper.dart';
 import '../helper/global.dart';
 import '../helper/pref.dart';
 import '../model/home_type.dart';
@@ -31,9 +29,6 @@ class _HomeScreenState extends State<HomeScreen> {
     //initializing device size
     mq = MediaQuery.sizeOf(context);
 
-    //sample api call
-    // APIs.getAnswer('hii');
-
     return Scaffold(
       //app bar
       appBar: AppBar(
@@ -59,7 +54,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
 
       //ad
-      bottomNavigationBar: AdHelper.nativeBannerAd(),
 
       //body
       body: ListView(

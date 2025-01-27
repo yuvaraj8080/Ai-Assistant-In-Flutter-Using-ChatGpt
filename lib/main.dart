@@ -19,10 +19,6 @@ Future<void> main() async {
   await Pref.initialize();
 
 
-
-  // for initializing facebook ads sdk
-  AdHelper.init();
-
   await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
   await SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
