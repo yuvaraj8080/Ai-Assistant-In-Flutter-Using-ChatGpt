@@ -11,5 +11,4 @@ late Size mq;
 //  You need to Update it in your Appwrite Project or comment appwrite code and hardcord key here.
 
 String geminiKey = 'AIzaSyBwzQ0JQFJBHusd-USS41nqqMmHu4Wg2gw';
-String apiKey = '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';
-
+String llamaAPITocken = 'LA-8457111fd9344fb19afa248516b1b54cd1027d451e2b4e68b914cd3579acfee8';

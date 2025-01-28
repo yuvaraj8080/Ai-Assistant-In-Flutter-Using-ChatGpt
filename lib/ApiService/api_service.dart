@@ -1,5 +1,7 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:developer';
+import 'package:flutter/cupertino.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:http/http.dart' as http; // Use http package
 import '../screen/feature/OnlineCourse/Model/CourseModel.dart';
@@ -22,6 +24,46 @@ class ApiService {
     } catch (e) {
       log('Error in getAnswer: $e');
       return 'Something went wrong (Try again later)';
+    }
+  }
+
+
+  static Future<String> getLLamaResponse(String userMessage) async {
+    try {
+      final url = Uri.parse("https://api.llama-api.com/v1/chat/completions");
+      final response = await http.post(
+        url,
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer $llamaAPITocken',
+        },
+        body: jsonEncode({
+          'model': 'llama3.1-70b',
+          'messages': [
+            {'role': 'system', 'content': 'Assistant is a large language model trained by OpenAI.'},
+            {'role': 'user', 'content': userMessage},
+          ],
+        }),
+      );
+
+      if (response.statusCode == 200) {
+        final jsonResponse = json.decode(response.body);
+        if (jsonResponse['choices'] != null && jsonResponse['choices'].isNotEmpty) {
+          final messageContent = jsonResponse['choices'][0]['message']['content'];
+          print(messageContent.toString());
+          return messageContent;
+        } else {
+          return 'No response from AI';
+        }
+      } else {
+        return 'Error: ${response.statusCode}';
+      }
+    } on TimeoutException catch (e) {
+      debugPrint('Timeout in getLLamaResponse: $e');
+      return 'Request timed out. Please try again later.';
+    } catch (e) {
+      debugPrint('Error in getLLamaResponse: $e');
+      return 'Something went wrong. Please try again later.';
     }
   }
 
